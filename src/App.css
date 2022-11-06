@@ -2,7 +2,6 @@
 :root {
   --main-color: #d3ad7f;
   --black: #13131a;
-  --bg: #010103;
   --border: 0.1rem solid rgba(225, 225, 225, 0.3);
 }
 * {
@@ -62,7 +61,7 @@ section {
   letter-spacing: 0.2rem;
 }
 .header {
-  background: var(--bg);
+  background: #010103;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -564,4 +563,22 @@ section {
   text-align: left;
   background-color: #04aa6d;
   color: white;
+}
+.about{
+  Background: #010103;
+}
+.menu{
+  Background: #010103;
+}
+.products{
+  Background: #010103;
+}
+.review{
+  Background: #010103;
+}
+.contact{
+  Background: #010103;
+}
+.blogs{
+  Background: #010103;
 }
