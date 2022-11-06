@@ -5,8 +5,9 @@ import { UserOutlined } from "@ant-design/icons";
 import { MailOutlined } from "@ant-design/icons";
 import { PhoneOutlined } from "@ant-design/icons";
 import Blogs from "./Blogs";
+import menu from "../../data/list";
 
-export default function Main(params) {
+export default function Main({ count, setCount, itemInCart, setItemInCart }) {
   return (
     <>
       <section className="home" id="home">
@@ -54,48 +55,19 @@ export default function Main(params) {
           thực đơn <span>của chúng tôi</span>
         </h1>
         <div className="box-container">
-          <Box
-            img="./img/menu-1.png"
-            name="Cafe sữa"
-            price="29.000"
-            btn="đặt ngay"
-            id="1"
-          />
-          <Box
-            img="./img/menu-2.png"
-            name="Cafe đen"
-            price="25.000"
-            btn="đặt ngay"
-            id="2"
-          />
-          <Box
-            img="./img/menu-3.png"
-            name="latte"
-            price="35.000"
-            btn="đặt ngay"
-            id="3"
-          />
-          <Box
-            img="./img/menu-4.png"
-            name="Cappuchino"
-            price="35.000"
-            btn="đặt ngay"
-            id="4"
-          />
-          <Box
-            img="./img/menu-5.png"
-            name="Choco latte"
-            price="45.000"
-            btn="đặt ngay"
-            id="5"
-          />
-          <Box
-            img="./img/menu-6.png"
-            name="Bạc xỉu"
-            price="29.000"
-            btn="đặt ngay"
-            id="6"
-          />
+          {menu?.map((item) => {
+            if (item.category === "drink") {
+              return (
+                <Box
+                  item={item}
+                  count={count}
+                  setCount={setCount}
+                  itemInCart={itemInCart}
+                  setItemInCart={setItemInCart}
+                />
+              );
+            }
+          })}
         </div>
       </section>
       {/* end menu
@@ -105,24 +77,11 @@ export default function Main(params) {
           Sản Phẩm <span>của chúng tôi</span>
         </h1>
         <div className="box-container">
-          <Product
-            img="./img/product-1.png"
-            name="Robusta"
-            price="139.000"
-            prices="159.000"
-          />
-          <Product
-            img="./img/product-2.png"
-            name="Arabica"
-            price="239.000"
-            prices="259.000"
-          />
-          <Product
-            img="./img/product-3.png"
-            name="Culi"
-            price="299.000"
-            prices="319.000"
-          />
+          {menu?.map((item) => {
+            if (item.category === "product") {
+              return <Product item={item} />;
+            }
+          })}
         </div>
       </section>
       {/* end product
@@ -133,19 +92,16 @@ export default function Main(params) {
         </h1>
         <div className="box-container">
           <Customers
-            img="./img/quote-img.png"
             ctn="Rất hài lòng về sản phẩm và cách chăm sóc khách hàng."
             avt="./img/pic-1.png"
             name="Bảo Long"
           />
           <Customers
-            img="./img/quote-img.png"
             ctn="Mình rất hài lòng vì được CaFeNa tư vấn những sản phẩm tốt, phù hợp với nhu cầu của mình, giá cả phải chăng, Nhân viên hỗ trợ rất nhiệt tình."
             avt="./img/pic-2.png"
             name="Thanh Nhi"
           />
           <Customers
-            img="./img/quote-img.png"
             ctn="Tôi luôn tin tưởng vào sản phẩm dịch vụ của CaFeNa và sẽ tiếp tục sử dụng dịch vụ của CaFeNa trong thời gian tới"
             avt="./img/pic-3.png"
             name="Gnol"

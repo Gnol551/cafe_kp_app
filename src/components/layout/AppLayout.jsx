@@ -1,10 +1,10 @@
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 
-export default function AppLayout({ children }) {
+export default function AppLayout({ children, count, setCount }) {
   return (
     <>
-      <Header />
+      <Header count={count} setCount={setCount} />
       {children}
       <Footer />
     </>

@@ -1,0 +1,70 @@
+const menu = [
+  {
+    id: 1,
+    img: "./img/menu-1.png",
+    name: "Cafe sữa",
+    price: 29000,
+    category: "drink",
+  },
+  {
+    id: 2,
+    img: "./img/menu-2.png",
+    name: "Cafe đen",
+    price: 25000,
+    category: "drink",
+  },
+  {
+    id: 3,
+    img: "./img/menu-3.png",
+    name: "latte",
+    price: 35000,
+    category: "drink",
+  },
+  {
+    id: 4,
+    img: "./img/menu-4.png",
+    name: "Cappuchino",
+    price: 35000,
+    category: "drink",
+  },
+  {
+    id: 5,
+    img: "./img/menu-5.png",
+    name: "Choco latte",
+    price: 45000,
+    category: "drink",
+  },
+  {
+    id: 6,
+    img: "./img/menu-6.png",
+    name: "Bạc Xỉu",
+    price: 29000,
+    category: "drink",
+  },
+  {
+    id: 7,
+    img: "./img/product-1.png",
+    name: "Robusta",
+    price: "139.000",
+    prices: "159.000",
+    category: "product",
+  },
+  {
+    id: 8,
+    img: "./img/product-2.png",
+    name: "Arabica",
+    price: "239.000",
+    prices: "259.000",
+    category: "product",
+  },
+  {
+    id: 9,
+    img: "./img/product-3.png",
+    name: "Culi",
+    price: "299.000",
+    prices: "319.000",
+    category: "product",
+  },
+];
+
+export default menu;

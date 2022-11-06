@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Cart from "./Cart";
 import { HashLink } from "react-router-hash-link";
 
-export default function Header(params) {
+export default function Header({ count, setCount }) {
   return (
     <header className="header">
       <Link to="/" className="logo">
@@ -32,7 +32,7 @@ export default function Header(params) {
           Bài viết
         </HashLink>
       </nav>
-      <Cart />
+      <Cart count={count} setCount={setCount} />
     </header>
   );
 }
