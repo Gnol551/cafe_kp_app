@@ -9,7 +9,7 @@ export default function Cart({ itemInCart, setItemInCart }) {
 
   return (
     <>
-      <h3>Đơn hàng</h3>
+      <h3 className="giohang">Đơn hàng</h3>
       <table id="cart-table">
         <thead>
           <tr>

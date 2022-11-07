@@ -65,6 +65,54 @@ const menu = [
     prices: "319.000",
     category: "product",
   },
+  {
+    id:10,
+    ctn:"Rất hài lòng về sản phẩm và cách chăm sóc khách hàng.",
+    avt:"./img/pic-1.png",
+    name: "Bảo Long",
+    category: "customers",
+  },
+  {
+    id:11,
+    ctn:"Mình rất hài lòng vì được CaFeNa tư vấn những sản phẩm tốt, phù hợp với nhu cầu của mình, giá cả phải chăng, Nhân viên hỗ trợ rất nhiệt tình.",
+    avt:"./img/pic-2.png",
+    name:"Thanh Nhi",
+    category: "customers",
+  },
+  {
+    id:12,
+    ctn:"Tôi luôn tin tưởng vào sản phẩm dịch vụ của CaFeNa và sẽ tiếp tục sử dụng dịch vụ của CaFeNa trong thời gian tới",
+    avt:"./img/pic-3.png",
+    name:"Gnol",
+    category: "customers",
+  },
+  {
+    id: 13,
+    img:"./img/blog-1.jpeg",
+    hd:"Mỗi buổi sáng, nếu không có tách cà phê, tôi cảm thấy mình vô vị!",
+    ad:"by admin / 21st may, 2021",
+    ctn:"Cà phê không phải là thú thanh thản như trà, càng không mạnh mẽ bạo liệt như rượu.",
+    btn: "đọc thêm",
+    category: "blogs",
+  },
+  {
+    id: 14,
+    img:"./img/blog-2.jpeg",
+    hd:"Cà phê khiến ta mạnh mẽ, điềm đạm và thông thái",
+    ad:"by admin / 21st may, 2021",
+    ctn:"Người thưởng thức nhẹ nhàng cho rằng cà phê là gạch nối giữa niềm vui và nỗi buồn.",
+    btn:"đọc thêm",
+    category: "blogs",
+  },
+  {
+    id: 15,
+    img:"./img/blog-3.jpeg",
+    hd:"Tôi yêu ly cà phê buổi sáng, con đường ngập lá vàng",
+    ad:"by admin / 21st may, 2021",
+    ctn:"Một tách cà phê vào buổi sáng mang lại sự tuyệt vời mà không buổi nào có thể tạo ra được.",
+    btn: "đọc thêm",
+    category: "blogs",
+  }
 ];
 
 export default menu;

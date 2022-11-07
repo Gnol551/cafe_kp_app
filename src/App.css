@@ -478,6 +478,68 @@ section {
 .footer .links a:hover {
   background: var(--main-color);
 }
+.login {
+  margin: 14% 20%;
+}
+
+.login .row {
+  display: block;
+  background: var(--black);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.login .row form {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.login .row form h3 {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: #fff;
+}
+.login .row form .inputBox {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: var(--black);
+  border: var(--border);
+}
+.login .row form .inputBox span {
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+.login .row form .inputBox input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: #fff;
+  text-transform: none;
+  background: none;
+}
+.giohang {
+  background: #010103;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding: 2% 0%;
+}
+
+#cart-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #d3ad7f !important;
+  color: white;
+  font-size: 16px;
+}
+#cart-table td {
+  font-size: 14px;
+}
+#cart-table tr:nth-child(even) {
+  background-color: #ebe7e7;
+}
 
 @media (max-width: 991px) {
   html {
@@ -564,21 +626,21 @@ section {
   background-color: #04aa6d;
   color: white;
 }
-.about{
-  Background: #010103;
+.about {
+  background: #010103;
 }
-.menu{
-  Background: #010103;
+.menu {
+  background: #010103;
 }
-.products{
-  Background: #010103;
+.products {
+  background: #010103;
 }
-.review{
-  Background: #010103;
+.review {
+  background: #010103;
 }
-.contact{
-  Background: #010103;
+.contact {
+  background: #010103;
 }
-.blogs{
-  Background: #010103;
+.blogs {
+  background: #010103;
 }

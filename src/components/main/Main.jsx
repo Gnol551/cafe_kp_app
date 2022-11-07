@@ -91,21 +91,11 @@ export default function Main({ count, setCount, itemInCart, setItemInCart }) {
           Khách hàng <span>đánh giá</span>
         </h1>
         <div className="box-container">
-          <Customers
-            ctn="Rất hài lòng về sản phẩm và cách chăm sóc khách hàng."
-            avt="./img/pic-1.png"
-            name="Bảo Long"
-          />
-          <Customers
-            ctn="Mình rất hài lòng vì được CaFeNa tư vấn những sản phẩm tốt, phù hợp với nhu cầu của mình, giá cả phải chăng, Nhân viên hỗ trợ rất nhiệt tình."
-            avt="./img/pic-2.png"
-            name="Thanh Nhi"
-          />
-          <Customers
-            ctn="Tôi luôn tin tưởng vào sản phẩm dịch vụ của CaFeNa và sẽ tiếp tục sử dụng dịch vụ của CaFeNa trong thời gian tới"
-            avt="./img/pic-3.png"
-            name="Gnol"
-          />
+        {menu?.map((item) => {
+            if (item.category === "customers") {
+              return <Customers item={item} />;
+            }
+          })}
         </div>
       </section>
       {/* end review
@@ -152,30 +142,11 @@ export default function Main({ count, setCount, itemInCart, setItemInCart }) {
           Bài <span>viết</span>
         </h1>
         <div className="box-container">
-          <Blogs
-            img="./img/blog-1.jpeg"
-            hd="Mỗi buổi sáng, nếu không có tách cà phê, tôi cảm thấy mình vô
-      vị!"
-            ad="by admin / 21st may, 2021"
-            ctn="Cà phê không phải là thú thanh thản như trà, càng không mạnh mẽ bạo liệt như rượu."
-            btn="đọc thêm"
-          />
-          <Blogs
-            img="./img/blog-2.jpeg"
-            hd="Cà phê khiến ta mạnh mẽ, điềm đạm và thông thái"
-            ad="by admin / 21st may, 2021"
-            ctn="Người thưởng thức nhẹ nhàng cho rằng cà phê là gạch nối giữa
-      niềm vui và nỗi buồn."
-            btn="đọc thêm"
-          />
-          <Blogs
-            img="./img/blog-3.jpeg"
-            hd="Tôi yêu ly cà phê buổi sáng, con đường ngập lá vàng"
-            ad="by admin / 21st may, 2021"
-            ctn="Một tách cà phê vào buổi sáng mang lại sự tuyệt vời mà không
-      buổi nào có thể tạo ra được."
-            btn="đọc thêm"
-          />
+          {menu?.map((item) => {
+            if (item.category === "blogs") {
+              return <Blogs item={item} />;
+            }
+          })}
         </div>
       </section>
     </>

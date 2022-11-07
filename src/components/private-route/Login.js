@@ -5,7 +5,7 @@ export default function Login({ isAuthenticated, setIsAuthenticated }) {
 
   return (
     <>
-      <section className="contact" id="contact">
+      <section className="login" id="contact">
         <div className="row">
           <form action="">
             <h3>Đăng nhập</h3>

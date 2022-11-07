@@ -1,17 +1,17 @@
-export default function Blogs(props) {
+export default function Blogs({item}) {
   return (
     <div className="box">
       <div className="image">
-        <img src={props.img} alt="" />
+        <img src={item.img} alt="" />
       </div>
       <div className="content">
         <a href="#" className="title">
-          {props.hd}
+          {item.hd}
         </a>
-        <span>{props.ad}</span>
-        <p>{props.ctn}</p>
+        <span>{item.ad}</span>
+        <p>{item.ctn}</p>
         <a href="#" className="btn">
-          {props.btn}
+          {item.btn}
         </a>
       </div>
     </div>

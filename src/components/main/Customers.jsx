@@ -1,11 +1,11 @@
 
-export default function Customers(props) {
+export default function Customers({item}) {
   return (
     <div className="box">
       <img src="./img/quote-img.png" alt="" className="quote"/>
-      <p>{props.ctn}</p>
-      <img src={props.avt} className="user" alt="" />
-      <h3>{props.name}</h3>
+      <p>{item.ctn}</p>
+      <img src={item.avt} className="user" alt="" />
+      <h3>{item.name}</h3>
     </div>
   );
 }
