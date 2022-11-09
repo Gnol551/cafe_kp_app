@@ -11,7 +11,7 @@ import Login from "./components/private-route/Login";
 export default function App() {
   const [count, setCount] = useState(0);
   const [itemInCart, setItemInCart] = useState([]);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <>

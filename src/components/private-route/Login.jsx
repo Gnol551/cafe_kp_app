@@ -1,8 +1,9 @@
 import { MailOutlined, UserOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login({ isAuthenticated, setIsAuthenticated }) {
-  // cho nay la de lam logic check coi co authen khong
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,8 +16,6 @@ export default function Login({ isAuthenticated, setIsAuthenticated }) {
       password: password,
     };
 
-    console.log(JSON.stringify(obj));
-
     fetch("http://localhost:5000/api/auth", {
       method: "POST",
       headers: {
@@ -27,6 +26,8 @@ export default function Login({ isAuthenticated, setIsAuthenticated }) {
       .then((result) => result.json())
       .then((info) => {
         console.log(info);
+        setIsAuthenticated(info);
+        navigate("/dashboard", { state: info });
       });
   };
 

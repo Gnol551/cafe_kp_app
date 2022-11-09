@@ -1,5 +1,9 @@
 export default function Dashboard({}) {
   return (
-    <div style={{ backgroundColor: "white", color: "black" }}>Dashboard</div>
+    <div style={{ backgroundColor: "white", color: "black" }}>
+      
+
+      
+    </div>
   );
 }
