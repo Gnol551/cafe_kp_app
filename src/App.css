@@ -479,23 +479,27 @@ section {
   background: var(--main-color);
 }
 .login {
-  margin: 14% 20%;
+  margin: 200px 20%;
 }
 
 .login .row {
   display: block;
-  background: var(--black);
+  background: rgba(255, 255, 255, 0);
   flex-wrap: wrap;
   gap: 1rem;
 }
 .login .row form {
   padding: 5rem 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .login .row form h3 {
   text-transform: uppercase;
   font-size: 3.5rem;
   color: #fff;
+  width: 200px;
 }
 .login .row form .inputBox {
   display: flex;
@@ -504,7 +508,9 @@ section {
   margin-bottom: 2rem;
   background: var(--black);
   border: var(--border);
+  width: 400px;
 }
+
 .login .row form .inputBox span {
   color: #fff;
   font-size: 2rem;
@@ -517,6 +523,9 @@ section {
   color: #fff;
   text-transform: none;
   background: none;
+}
+html{
+  background: black;
 }
 .giohang {
   background: #010103;
@@ -539,6 +548,44 @@ section {
 }
 #cart-table tr:nth-child(even) {
   background-color: #ebe7e7;
+}
+.dash header{
+  background-color: #001528;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgb(121, 121, 121);
+}
+
+.dash .cottrai{
+  background: #001528;
+  width: 15%;
+  min-height: 92.6vh;
+  float: left;
+}
+.cotchinh{
+  width: 85%;
+  background:white;
+  min-height: 93.5vh;
+  float: right; 
+}
+.namedash{
+  color: white;
+  font-size: 20px;
+}
+.logodash{
+  width: 50px;
+  height: auto;
+  padding: 5px 10px 5px 50px;
+}
+.cottrai ul li{
+  color: white;
+  font-size: 20px;
+  padding: 15px 20px ;
+}
+.cottrai ul li:hover {
+  background:#1990FF;
 }
 
 @media (max-width: 991px) {

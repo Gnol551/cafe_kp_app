@@ -51,7 +51,7 @@ export default function Login({ isAuthenticated, setIsAuthenticated }) {
                 placeholder="Username"
               />
             </div>
-            <div className="inputBox">
+            <div className="inputBox" style={{marginTop:'0px'}}>
               <span>
                 <MailOutlined />
               </span>
