@@ -11,7 +11,6 @@ import Login from "./components/private-route/Login";
 export default function App() {
   const [count, setCount] = useState(0);
   const [itemInCart, setItemInCart] = useState([]);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <>
@@ -42,23 +41,12 @@ export default function App() {
           <Route
             path="/dashboard"
             element={
-              <PrivateRoute
-                isAuthenticated={isAuthenticated}
-                setIsAuthenticated={setIsAuthenticated}
-              >
+              <PrivateRoute>
                 <Dashboard />
               </PrivateRoute>
             }
           />
-          <Route
-            path="/login"
-            element={
-              <Login
-                isAuthenticated={isAuthenticated}
-                setIsAuthenticated={setIsAuthenticated}
-              />
-            }
-          />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

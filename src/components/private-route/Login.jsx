@@ -2,7 +2,7 @@ import { MailOutlined, UserOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ isAuthenticated, setIsAuthenticated }) {
+export default function Login() {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -16,18 +16,21 @@ export default function Login({ isAuthenticated, setIsAuthenticated }) {
       password: password,
     };
 
-    fetch("http://localhost:5000/api/auth", {
+    fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(obj),
     })
       .then((result) => result.json())
       .then((info) => {
-        console.log(info);
-        setIsAuthenticated(info);
-        navigate("/dashboard", { state: info });
+        if (info.success) {
+          localStorage.setItem("token", info.data);
+          navigate("/dashboard");
+        } else {
+          alert(info.message);
+        }
       });
   };
 
@@ -51,7 +54,7 @@ export default function Login({ isAuthenticated, setIsAuthenticated }) {
                 placeholder="Username"
               />
             </div>
-            <div className="inputBox" style={{marginTop:'0px'}}>
+            <div className="inputBox" style={{ marginTop: "0px" }}>
               <span>
                 <MailOutlined />
               </span>
