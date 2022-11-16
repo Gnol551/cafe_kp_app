@@ -587,7 +587,12 @@ html{
 .cottrai ul li:hover {
   background:#1990FF;
 }
-
+.hamburger-react{
+  display: none;
+}
+.menu-left{
+  display: none;
+}
 @media (max-width: 991px) {
   html {
     font-size: 55%;
@@ -636,11 +641,90 @@ html{
   .home .content p {
     font-size: 1.5rem;
   }
+  .hamburger-react{
+    display: block;
+    position: absolute !important; 
+    top: 30px;
+    right: 70px;
+    color: white;
+  }
+  .hamburger-react svg{
+    height: 27px;
+    width: 27px
+  }
+  .menu-left{
+    background: white;
+    height: 300px;
+    width: 35%;
+    position: absolute;
+    right: 0;
+    top: 83px ;
+    display: block;
+  }
+  .nav-mobile{
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  .nav-mobile a{
+    color: black;
+    font-size: 17px;
+    line-height: 30px;
+    padding: 5px 10px;
+  }
+  .nav-mobile a:hover{
+    padding-left: 15px;
+  color: var(--main-color);
+  }
+  .header .icons div {
+    color: #fff;
+    cursor: pointer;
+    font-size: 3.8rem;
+    margin-left: 2rem;  
+}
+a.icons{
+  margin-top: 8px ;
+}
 }
 @media (max-width: 450px) {
   html {
     font-size: 50%;
   }
+  .header .icons div {
+    color: #fff;
+    cursor: pointer;
+    font-size: 3.8rem;
+    margin-left: 2rem;  
+}
+.hamburger-react{
+  display: block;
+  position: absolute !important; 
+  top:28px;
+  right: 70px;
+  color: white;
+}
+.menu-left{
+  right: 0;
+  top: 77px ;
+}
+.nav-mobile{
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+.nav-mobile a{
+  color: black;
+  font-size: 17px;
+  line-height: 30px;
+  padding: 5px 10px;
+}
+.nav-mobile a:hover{
+  padding-left: 15px;
+color: var(--main-color);
+}
+a.icons{
+  margin-top: 10px ;
+}
 }
 
 #cart-table {
@@ -690,4 +774,16 @@ html{
 }
 .blogs {
   background: #010103;
+}
+tfoot td{
+  border: 0px solid !important;
+  color: var(--main-color);
+  font-size: 20px !important;
+}
+tfoot td:first-child{
+border-left: 1px solid #ddd;
+}
+tfoot td:nth-child(4){
+  border: 1px solid #ddd !important;
+  border-bottom: 0px solid #ddd !important;
 }

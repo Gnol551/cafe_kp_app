@@ -1,12 +1,29 @@
 import { useEffect } from "react";
 
 export default function Cart({ itemInCart, setItemInCart }) {
-
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("itemsOrdered"));
     setItemInCart(items);
   }, []);
 
+  console.log(itemInCart);
+  const calcPrice = () => {
+    let price = 0;
+    itemInCart.map((x) => {
+      const total = x.price * x.qty;
+      price += total;
+    });
+
+    return price;
+  };
+  const calcQty = () => {
+    let qty = 0;
+    itemInCart.map((x) => {
+      qty += x.qty;
+    });
+
+    return qty;
+  };
   return (
     <>
       <h3 className="giohang">Đơn hàng</h3>
@@ -23,7 +40,7 @@ export default function Cart({ itemInCart, setItemInCart }) {
         <tbody>
           {itemInCart?.map((item, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>
@@ -35,6 +52,15 @@ export default function Cart({ itemInCart, setItemInCart }) {
             );
           })}
         </tbody>
+        <tfoot>
+          <tr>
+            <td>Tổng</td>
+            <td></td>
+            <td></td>
+            <td>{calcPrice()}</td>
+            <td>{calcQty()}</td>
+          </tr>
+        </tfoot>
       </table>
     </>
   );
