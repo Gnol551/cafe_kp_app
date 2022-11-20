@@ -7,6 +7,8 @@ import Cart from "./components/main/Cart";
 import Dashboard from "./components/private-route/Dashboard";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Login from "./components/private-route/Login";
+import Products from "./components/admin/products/Products";
+import PurchaseOrdersList from "./components/admin/purchase-orders/PurchaseOrdersList";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -34,7 +36,12 @@ export default function App() {
             path="/cart"
             element={
               <AppLayout count={count} setCount={setCount}>
-                <Cart itemInCart={itemInCart} setItemInCart={setItemInCart} />
+                <Cart
+                  itemInCart={itemInCart}
+                  setItemInCart={setItemInCart}
+                  count={count}
+                  setCount={setCount}
+                />
               </AppLayout>
             }
           />
@@ -43,6 +50,26 @@ export default function App() {
             element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard/products"
+            element={
+              <PrivateRoute>
+                <Dashboard>
+                  <Products />
+                </Dashboard>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard/purchase-orders"
+            element={
+              <PrivateRoute>
+                <Dashboard>
+                  <PurchaseOrdersList />
+                </Dashboard>
               </PrivateRoute>
             }
           />

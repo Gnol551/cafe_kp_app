@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import CheckOutForm from "./CheckOutForm";
 
-export default function Cart({ itemInCart, setItemInCart }) {
+export default function Cart({ itemInCart, setItemInCart, count, setCount }) {
+  const [openCheckout, setOpenCheckout] = useState(false);
+
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("itemsOrdered"));
-    setItemInCart(items);
+    setItemInCart(items ?? []);
   }, []);
 
-  console.log(itemInCart);
   const calcPrice = () => {
     let price = 0;
     itemInCart.map((x) => {
@@ -24,6 +26,48 @@ export default function Cart({ itemInCart, setItemInCart }) {
 
     return qty;
   };
+
+  const addItem = (item) => {
+    const newQty = item.qty + 1;
+    const newItem = { ...item, qty: newQty };
+    // set state tong lai
+    let arr = [];
+    itemInCart.map((x) => {
+      if (x.id === item.id) {
+        arr.push(newItem);
+      } else {
+        arr.push(x);
+      }
+    });
+    setItemInCart(arr);
+    let newCount = Number(count) + 1;
+    setCount(newCount);
+
+    // set localstorage tong lai
+    localStorage.setItem("itemsOrdered", JSON.stringify(arr));
+    localStorage.setItem("totalQtyOrdered", newCount);
+  };
+
+  const subtractItem = (item) => {
+    const newQty = item.qty - 1;
+    const newItem = { ...item, qty: newQty };
+    let arr = [];
+    itemInCart.map((x) => {
+      if (x.id === item.id) {
+        if (Number(x.qty) !== 1) {
+          arr.push(newItem);
+        }
+      } else {
+        arr.push(x);
+      }
+    });
+    setItemInCart(arr);
+    let newCount = Number(count) - 1;
+    setCount(newCount);
+    localStorage.setItem("itemsOrdered", JSON.stringify(arr));
+    localStorage.setItem("totalQtyOrdered", newCount);
+  };
+
   return (
     <>
       <h3 className="giohang">Đơn hàng</h3>
@@ -35,6 +79,7 @@ export default function Cart({ itemInCart, setItemInCart }) {
             <th>Hình ảnh</th>
             <th>Giá tiền</th>
             <th>Số lượng</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +93,10 @@ export default function Cart({ itemInCart, setItemInCart }) {
                 </td>
                 <td>{item.price}</td>
                 <td>{item.qty}</td>
+                <td>
+                  <button onClick={() => subtractItem(item)}>-</button>
+                  <button onClick={() => addItem(item)}>+</button>
+                </td>
               </tr>
             );
           })}
@@ -59,9 +108,33 @@ export default function Cart({ itemInCart, setItemInCart }) {
             <td></td>
             <td>{calcPrice()}</td>
             <td>{calcQty()}</td>
+            <td></td>
           </tr>
         </tfoot>
       </table>
+      {itemInCart?.length ? (
+        <>
+          <button
+            onClick={() => {
+              setOpenCheckout(!openCheckout);
+            }}
+          >
+            Thanh Toán
+          </button>
+          {openCheckout ? (
+            <CheckOutForm
+              itemInCart={itemInCart}
+              setOpenCheckout={setOpenCheckout}
+              setItemInCart={setItemInCart}
+              setCount={setCount}
+            />
+          ) : (
+            <></>
+          )}
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
