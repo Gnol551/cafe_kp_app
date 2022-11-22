@@ -3,6 +3,7 @@ import { TwitterOutlined } from "@ant-design/icons";
 import { InstagramOutlined } from "@ant-design/icons";
 import { LinkedinOutlined } from "@ant-design/icons";
 import { YoutubeOutlined } from "@ant-design/icons";
+import { HashLink } from "react-router-hash-link";
 
 export default function Footer(params) {
   return (
@@ -25,13 +26,27 @@ export default function Footer(params) {
         </a>
       </div>
       <div className="links">
-        <a href="#home">Trang chủ</a>
-        <a href="#about">Giới thiệu</a>
-        <a href="#menu">Thực đơn</a>
-        <a href="#product">Sản phẩm</a>
-        <a href="#review">Đánh giá</a>
-        <a href="#contact">Liên hệ</a>
-        <a href="#blogs">Bài viết</a>
+      <HashLink smooth to="/#home">
+              Trang chủ
+            </HashLink>
+            <HashLink smooth to="/#about">
+              Giới thiệu
+            </HashLink>
+            <HashLink smooth to="/#menu">
+              Thực đơn
+            </HashLink>
+            <HashLink smooth to="/#product">
+              Sản phẩm
+            </HashLink>
+            <HashLink smooth to="/#review">
+              Đánh giá
+            </HashLink>
+            <HashLink smooth to="/#contact">
+              Liên hệ
+            </HashLink>
+            <HashLink smooth to="/#blogs">
+              Bài viết
+            </HashLink>
       </div>
     </section>
   );

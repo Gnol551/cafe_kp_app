@@ -79,7 +79,6 @@ export default function Cart({ itemInCart, setItemInCart, count, setCount }) {
             <th>Hình ảnh</th>
             <th>Giá tiền</th>
             <th>Số lượng</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -92,9 +91,14 @@ export default function Cart({ itemInCart, setItemInCart, count, setCount }) {
                   <img src={item.img} alt="" />
                 </td>
                 <td>{item.price}</td>
-                <td>{item.qty}</td>
-                <td>
-                  <button onClick={() => subtractItem(item)}>-</button>
+                <td className="btn-cal">
+                  <button
+                    className="btn-sub"
+                    onClick={() => subtractItem(item)}
+                  >
+                    -
+                  </button>
+                  {item.qty}
                   <button onClick={() => addItem(item)}>+</button>
                 </td>
               </tr>
@@ -108,13 +112,14 @@ export default function Cart({ itemInCart, setItemInCart, count, setCount }) {
             <td></td>
             <td>{calcPrice()}</td>
             <td>{calcQty()}</td>
-            <td></td>
           </tr>
         </tfoot>
       </table>
       {itemInCart?.length ? (
         <>
           <button
+            className="btn"
+            id="btn-pay"
             onClick={() => {
               setOpenCheckout(!openCheckout);
             }}

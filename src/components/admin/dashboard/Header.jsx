@@ -5,7 +5,7 @@ export default function Header() {
     <header>
       <img src="../../img/logo.png" alt="logo" className="logodash" />
       <span className="namedash">CAFENA</span>
-      <UserOutlined />
+      <UserOutlined className="user-dash"/>
     </header>
   );
 }

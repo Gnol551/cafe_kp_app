@@ -43,8 +43,8 @@ export default function CheckOutForm({
   };
 
   return (
-    <form onSubmit={handlerSubmit}>
-      <h3 style={{ color: "white" }}>Nhập thông tin giao hàng</h3>
+    <form className="form-cart" onSubmit={handlerSubmit} >
+      <h3>Nhập thông tin giao hàng</h3>
       <div className="inputBox">
         <span>
           <UserOutlined />
