@@ -733,8 +733,8 @@ html {
     text-align: center;
     width: 90% !important;
   }
-  .btn-cal button{
-padding: 0px 5px !important;
+  .btn-cal button {
+    padding: 0px 5px !important;
   }
   .login .row form .inputBox {
     display: flex;
@@ -744,7 +744,7 @@ padding: 0px 5px !important;
     background: var(--black);
     border: var(--border);
     width: 300px !important;
-}
+  }
 }
 
 #cart-table {
@@ -795,8 +795,8 @@ padding: 0px 5px !important;
   background-color: #04aa6d;
   color: white;
 }
-#btn-pay{
-  margin:15px 30px 0px;
+#btn-pay {
+  margin: 15px 30px 0px;
 }
 .about {
   background: #010103;
@@ -854,10 +854,35 @@ tfoot td:nth-child(4) {
   text-transform: none;
   background: none;
 }
-.user-dash{
+.user-dash {
   position: absolute;
   right: 40px;
   top: 20px;
   color: white;
   font-size: 20px;
+}
+.user-dash:active {
+  color: rgb(17, 16, 16);
+}
+.open-logout {
+  width: 200px;
+  height: 70px;
+  background: white;
+  position: absolute;
+  right: 10px;
+  top: 62px;
+  box-shadow: 2px 2px 5px 1px #c7c7c752;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.open-logout button {
+  background: white;
+  color: black;
+  font-size: 20px;
+  padding: 0px 20px;
+}
+.open-logout button:hover {
+  cursor: pointer;
+  color: var(--main-color);
 }
